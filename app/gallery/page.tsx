@@ -13,6 +13,7 @@ import {
   ShoppingBag,
   CheckCircle2,
 } from "lucide-react";
+import { siteConfig } from "@/lib/siteConfig";
 
 interface GalleryItem {
   id: string;
@@ -307,7 +308,7 @@ export default function GalleryPage() {
               Browse Complete Catalog
             </Link>
             <a
-              href="https://wa.me/923451964005?text=Assalam-o-Alaikum!%20I%20saw%20your%20Gallery%20and%20want%20to%20inquire%20about%20your%20footwear."
+              href={siteConfig.getWhatsAppLink("Assalam-o-Alaikum! I saw your Gallery and want to inquire about your footwear.")}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-black text-xs transition-all shadow-md shadow-emerald-600/30 flex items-center justify-center gap-2 active:scale-95"
@@ -389,9 +390,7 @@ export default function GalleryPage() {
                     View Catalog
                   </Link>
                   <a
-                    href={`https://wa.me/923451964005?text=Assalam-o-Alaikum!%20I%20am%20interested%20in%20this%20item%20from%20your%20Gallery:%20${encodeURIComponent(
-                      selectedItem.title
-                    )}`}
+                    href={siteConfig.getWhatsAppLink(`Assalam-o-Alaikum! I am interested in this item from your Gallery: ${selectedItem.title}`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-black text-xs shadow-md flex items-center justify-center gap-1.5"

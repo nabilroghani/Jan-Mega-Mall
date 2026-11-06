@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Providers } from "@/components/Providers";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { WhatsAppFloating } from "@/components/WhatsAppFloating";
+import { siteConfig } from "@/lib/siteConfig";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -95,7 +96,7 @@ const jsonLd = {
     longitude: "71.8407",
   },
   url: "https://janmegamall.pk",
-  telephone: "+923451964005",
+  telephone: siteConfig.phoneInternational,
   priceRange: "PKR 1500 - PKR 15000",
   paymentAccepted: "Cash on Delivery, JazzCash, EasyPaisa, Bank Transfer",
   openingHoursSpecification: [

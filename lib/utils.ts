@@ -1,6 +1,8 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+import { siteConfig } from "./siteConfig";
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -20,8 +22,7 @@ export function generateWhatsAppOrderLink(params: {
   customerCity?: string;
   customerAddress?: string;
 }): string {
-  const storeWhatsApp = "923451964005"; // Official Jan Mega Mall Timergara WhatsApp
-  let message = `*Jan Mega Mall - New Order Inquiry*\n📍 Store: Rest House Road, Timergara, Dir Lower\n--------------------------------\n`;
+  let message = `*${siteConfig.name} - New Order Inquiry*\n📍 Store: ${siteConfig.location.shortAddress}, ${siteConfig.location.district}\n--------------------------------\n`;
 
   if (params.items && params.items.length > 0) {
     message += `*Order Items:*\n`;
@@ -36,10 +37,10 @@ export function generateWhatsAppOrderLink(params: {
   }
 
   if (params.customerName) {
-    message += `--------------------------------\n*Customer Details:*\nName: ${params.customerName}\nCity: ${params.customerCity || "Timergara"}\nAddress: ${params.customerAddress || ""}\n`;
+    message += `--------------------------------\n*Customer Details:*\nName: ${params.customerName}\nCity: ${params.customerCity || siteConfig.location.city}\nAddress: ${params.customerAddress || ""}\n`;
   }
 
   message += `\nPlease confirm my order. Thank you!`;
 
-  return `https://wa.me/${storeWhatsApp}?text=${encodeURIComponent(message)}`;
+  return siteConfig.getWhatsAppLink(message);
 }

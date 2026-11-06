@@ -15,6 +15,7 @@ import {
   Truck,
   RotateCcw,
 } from "lucide-react";
+import { siteConfig } from "@/lib/siteConfig";
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
@@ -82,7 +83,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {/* WhatsApp Direct */}
           <a
-            href="https://wa.me/923451964005?text=Assalam-o-Alaikum!%20I%20want%20to%20inquire%20about%20footwear%20at%20Jan%20Mega%20Mall."
+            href={siteConfig.getWhatsAppLink(`Assalam-o-Alaikum! I want to inquire about footwear at ${siteConfig.name}.`)}
             target="_blank"
             rel="noopener noreferrer"
             className="p-6 rounded-3xl bg-gradient-to-br from-emerald-50 via-white to-white border border-emerald-300/80 shadow-sm hover:border-emerald-500 hover:shadow-md transition-all group active:scale-95 flex flex-col justify-between"
@@ -95,7 +96,7 @@ export default function ContactPage() {
                 Instant WhatsApp
               </span>
               <h3 className="font-display font-black text-base text-slate-950 mt-1">
-                +92 345 1964005
+                {siteConfig.phoneFormatted}
               </h3>
               <p className="text-xs text-gray-500 mt-1 leading-relaxed">
                 Fastest response for sizing advice, orders, and custom chappal photos.
@@ -159,7 +160,7 @@ export default function ContactPage() {
                 COD Delivery Helpline
               </span>
               <h3 className="font-display font-black text-base text-slate-950 mt-1">
-                +92 945 825123
+                {siteConfig.phoneInternational}
               </h3>
               <p className="text-xs text-gray-500 mt-1 leading-relaxed">
                 Cash on delivery support &amp; 7-day size replacement inquiries.
@@ -303,7 +304,7 @@ export default function ContactPage() {
                 Chat directly with our showroom manager on WhatsApp for real shoe photos, size fitting guide, and quick COD booking.
               </p>
               <a
-                href="https://wa.me/923451964005?text=Assalam-o-Alaikum!%20I%20need%20quick%20help%20with%20shoes%20at%20Jan%20Mega%20Mall."
+                href={siteConfig.getWhatsAppLink(`Assalam-o-Alaikum! I need quick help with shoes at ${siteConfig.name}.`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-black text-xs shadow-md active:scale-95 transition-all"

@@ -13,6 +13,7 @@ import {
   RotateCcw,
   ShoppingBag,
 } from "lucide-react";
+import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata = {
   title: "About Us | Jan Mega Mall - Timergara Footwear Heritage",
@@ -279,7 +280,7 @@ export default function AboutPage() {
               Get Store Map &amp; Directions
             </Link>
             <a
-              href="https://wa.me/923451964005?text=Assalam-o-Alaikum!%20I%20want%20to%20inquire%20about%20Jan%20Mega%20Mall."
+              href={siteConfig.getWhatsAppLink(`Assalam-o-Alaikum! I want to inquire about ${siteConfig.name}.`)}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-black text-xs transition-all shadow-md shadow-emerald-600/30 flex items-center justify-center gap-2 active:scale-95"

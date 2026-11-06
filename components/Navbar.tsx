@@ -18,6 +18,7 @@ import { SearchModal } from "@/components/SearchModal";
 import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
 import { motion, AnimatePresence } from "framer-motion";
+import { siteConfig } from "@/lib/siteConfig";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -228,15 +229,15 @@ export const Navbar = () => {
               <div className="p-4 border-t border-gray-100 bg-slate-950 text-white space-y-3">
                 <div className="flex items-center gap-2 text-xs text-amber-300">
                   <MapPin className="w-4 h-4 text-amber-400 shrink-0" />
-                  <span>Rest House Road, Timergara, Dir Lower</span>
+                  <span>{siteConfig.location.fullAddress.split(",").slice(0, 3).join(",")}</span>
                 </div>
                 <Link
-                  href="https://wa.me/923451964005"
+                  href={siteConfig.getWhatsAppLink()}
                   target="_blank"
                   className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-black text-xs shadow-md"
                 >
                   <Phone className="w-4 h-4" />
-                  <span>WhatsApp Orders: +92 345 1964005</span>
+                  <span>WhatsApp Orders: {siteConfig.phoneFormatted}</span>
                 </Link>
               </div>
             </motion.div>

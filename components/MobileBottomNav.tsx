@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Home, Grid, Heart, ShoppingBag, MessageCircle } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
+import { siteConfig } from "@/lib/siteConfig";
 
 export const MobileBottomNav = () => {
   const pathname = usePathname();
@@ -46,7 +47,7 @@ export const MobileBottomNav = () => {
 
         {/* WhatsApp Direct */}
         <a
-          href="https://wa.me/923451964005?text=Assalam-o-Alaikum!%20I%20want%20to%20inquire%20about%20shoes%20at%20Jan%20Mega%20Mall%20Timergara."
+          href={siteConfig.getWhatsAppLink(`Assalam-o-Alaikum! I want to inquire about shoes at ${siteConfig.name} Timergara.`)}
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center justify-center py-1 px-3 rounded-xl text-emerald-600 active:scale-95 transition-all"

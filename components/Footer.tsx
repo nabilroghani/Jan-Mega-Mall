@@ -14,6 +14,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { Logo } from "@/components/Logo";
+import { siteConfig } from "@/lib/siteConfig";
 
 export const Footer = () => {
   const [email, setEmail] = useState("");
@@ -90,17 +91,17 @@ export const Footer = () => {
           <div className="space-y-2.5 pt-2 text-xs text-gray-300">
             <div className="flex items-start gap-2.5">
               <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-              <span>Rest House Road, Timergara, District Dir Lower, KPK, Pakistan</span>
+              <span>{siteConfig.location.fullAddress}</span>
             </div>
             <div className="flex items-center gap-2.5">
               <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
-              <a href="https://wa.me/923451964005" target="_blank" className="text-emerald-400 hover:text-emerald-300 font-bold transition-colors">
-                +92 345 1964005
+              <a href={siteConfig.getWhatsAppLink()} target="_blank" className="text-emerald-400 hover:text-emerald-300 font-bold transition-colors">
+                {siteConfig.phoneFormatted}
               </a>
             </div>
             <div className="flex items-center gap-2.5">
               <Clock className="w-4 h-4 text-amber-400/80 shrink-0" />
-              <span>Mon - Sat: 9:00 AM - 10:00 PM | Sun: 2:00 PM - 10:00 PM</span>
+              <span>{siteConfig.timings}</span>
             </div>
           </div>
         </div>
@@ -171,7 +172,7 @@ export const Footer = () => {
               </Link>
             </li>
             <li>
-              <a href="https://wa.me/923451964005?text=Assalam-o-Alaikum!%20I%20want%20to%20exchange%20or%20inquire%20about%20my%20order." target="_blank" className="hover:text-amber-400 transition-colors">
+              <a href={siteConfig.getWhatsAppLink("Assalam-o-Alaikum! I want to exchange or inquire about my order.")} target="_blank" className="hover:text-amber-400 transition-colors">
                 7-Day Size Exchange Support
               </a>
             </li>
@@ -213,7 +214,7 @@ export const Footer = () => {
 
           <div className="mt-4 pt-3 border-t border-amber-500/15">
             <a
-              href="https://wa.me/923451964005"
+              href={siteConfig.getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-black text-xs shadow-md hover:from-emerald-500 hover:to-emerald-600 transition-all active:scale-95"

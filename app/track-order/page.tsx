@@ -15,6 +15,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { formatPKR } from "@/data/products";
+import { siteConfig } from "@/lib/siteConfig";
 
 function TrackOrderContent() {
   const searchParams = useSearchParams();
@@ -145,7 +146,7 @@ function TrackOrderContent() {
             </div>
 
             <a
-              href={`https://wa.me/923451964005?text=Assalam-o-Alaikum!%20I%20want%20to%20inquire%20about%20my%20Order%20${orderData.id}`}
+              href={siteConfig.getWhatsAppLink(`Assalam-o-Alaikum! I want to inquire about my Order ${orderData.id}`)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 py-2 px-4 rounded-xl bg-emerald-50 text-emerald-700 hover:bg-emerald-100 text-xs font-bold border border-emerald-200 transition-colors"

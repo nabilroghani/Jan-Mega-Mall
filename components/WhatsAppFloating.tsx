@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { MessageCircle, X } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { siteConfig } from "@/lib/siteConfig";
 
 export const WhatsAppFloating = () => {
   const pathname = usePathname();
@@ -23,7 +24,7 @@ export const WhatsAppFloating = () => {
           >
             <X className="w-3 h-3" />
           </button>
-          <div className="font-bold text-gray-900 mb-0.5">Jan Mega Mall Support</div>
+          <div className="font-bold text-gray-900 mb-0.5">{siteConfig.name} Support</div>
           <p className="text-[11px] text-gray-500 leading-tight">
             Order on WhatsApp or ask size questions directly!
           </p>
@@ -32,7 +33,7 @@ export const WhatsAppFloating = () => {
 
       {/* Floating Action Button */}
       <a
-        href="https://wa.me/923451964005?text=Assalam-o-Alaikum!%20I%20am%20browsing%20Jan%20Mega%20Mall%20Timergara%20and%20want%20to%20place%20an%20order."
+        href={siteConfig.getWhatsAppLink(`Assalam-o-Alaikum! I am browsing ${siteConfig.name} and want to place an order.`)}
         target="_blank"
         rel="noopener noreferrer"
         onMouseEnter={() => setShowTooltip(true)}

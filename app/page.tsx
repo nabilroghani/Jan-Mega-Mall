@@ -24,6 +24,7 @@ import {
   getNewArrivals,
   formatPKR,
 } from "@/data/products";
+import { siteConfig } from "@/lib/siteConfig";
 
 import { Hero3DShoe } from "@/components/Hero3DShoe";
 
@@ -97,7 +98,7 @@ export default function HomePage() {
                 </Link>
 
                 <a
-                  href="https://wa.me/923451964005?text=Assalam-o-Alaikum!%20I%20want%20to%20order%20shoes%20from%20Jan%20Mega%20Mall."
+                  href={siteConfig.getWhatsAppLink(`Assalam-o-Alaikum! I want to order shoes from ${siteConfig.name}.`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 px-6 py-4 sm:py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-black text-sm shadow-lg shadow-emerald-600/25 transition-all active:scale-95"
@@ -291,7 +292,7 @@ export default function HomePage() {
                   Explore Heritage Line &rarr;
                 </Link>
                 <a
-                  href="https://wa.me/923451964005?text=Assalam-o-Alaikum%20I%20want%20to%20order%20Kaptaan%20Chappal"
+                  href={siteConfig.getWhatsAppLink("Assalam-o-Alaikum I want to order Kaptaan Chappal")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs border border-white/20 transition-all flex items-center justify-center gap-2 active:scale-95"
@@ -409,7 +410,7 @@ export default function HomePage() {
               Browse Catalog Online
             </Link>
             <a
-              href="https://wa.me/923451964005"
+              href={siteConfig.getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-black text-xs transition-all shadow-md shadow-emerald-600/30 flex items-center justify-center gap-2 active:scale-95"
